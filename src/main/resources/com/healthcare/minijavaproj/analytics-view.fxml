@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane xmlns:fx="http://javafx.com/fxml" fx:controller="com.healthcare.minijavaproj.AnalyticsController">
+    <BarChart fx:id="doctorAnalyticsChart" layoutX="20" layoutY="60" prefWidth="600" prefHeight="400">
+        <xAxis>
+            <CategoryAxis fx:id="xAxis" label="Doctor"/>
+        </xAxis>
+        <yAxis>
+            <NumberAxis fx:id="yAxis" label="Number of Patients"/>
+        </yAxis>
+    </BarChart>
+</AnchorPane>

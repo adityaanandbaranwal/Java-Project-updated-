@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.layout.*?>
+
+<TabPane xmlns:fx="http://javafx.com/fxml" fx:controller="com.healthcare.minijavaproj.HelloController" stylesheets="@styles.css" styleClass="root">
+    <!-- Patient Registration Tab -->
+    <Tab text="Patient Registration">
+        <AnchorPane>
+            <Label text="Patient Name" layoutX="20" layoutY="50" />
+            <TextField fx:id="patientNameField" layoutX="150" layoutY="50" promptText="Enter Name" styleClass="text-field"/>
+
+            <Label text="Medical History" layoutX="20" layoutY="100"/>
+            <TextField fx:id="medicalHistoryField" layoutX="150" layoutY="100" promptText="Enter Medical History" styleClass="text-field"/>
+
+            <Label text="Ongoing Treatments" layoutX="20" layoutY="150"/>
+            <TextField fx:id="ongoingTreatmentsField" layoutX="150" layoutY="150" promptText="Enter Ongoing Treatments" styleClass="text-field"/>
+
+            <Label text="Allergies" layoutX="20" layoutY="200"/>
+            <TextField fx:id="allergiesField" layoutX="150" layoutY="200" promptText="Enter Allergies" styleClass="text-field"/>
+
+            <Label text="Emergency Contact" layoutX="20" layoutY="250"/>
+            <TextField fx:id="emergencyContactField" layoutX="150" layoutY="250" promptText="Enter Emergency Contact" styleClass="text-field"/>
+
+            <Button fx:id="registerPatientBtn" layoutX="150" layoutY="300" text="Register Patient" onAction="#registerPatient" styleClass="button"/>
+
+            <!-- Patient ListView -->
+            <Label text="Registered Patients" layoutX="400" layoutY="20"/>
+            <ListView fx:id="patientListView" layoutX="400" layoutY="50" prefHeight="220" prefWidth="200" />
+        </AnchorPane>
+    </Tab>
+
+    <!-- Doctor Registration Tab -->
+    <Tab text="Doctor Registration">
+        <AnchorPane>
+            <VBox alignment="CENTER" spacing="10" layoutX="50" layoutY="50">
+                <Label text="Doctor Name"/>
+                <TextField fx:id="doctorNameField" promptText="Enter Name" styleClass="text-field"/>
+                <Label text="Specialization"/>
+                <TextField fx:id="doctorSpecializationField" promptText="Enter Specialization" styleClass="text-field"/>
+                <Label text="Contact Number"/>
+                <TextField fx:id="doctorContactField" promptText="Enter Contact Number" styleClass="text-field"/>
+                <Button fx:id="registerDoctorBtn" text="Register Doctor" onAction="#registerDoctor" styleClass="button"/>
+            </VBox>
+        </AnchorPane>
+    </Tab>
+
+    <!-- Appointment Booking Tab -->
+    <Tab text="Appointment Booking">
+        <AnchorPane>
+            <Label text="Choose Doctor" layoutX="20" layoutY="50"/>
+            <ComboBox fx:id="doctorComboBox" layoutX="150" layoutY="50" styleClass="combo-box"/>
+
+            <Label text="Choose Appointment Date" layoutX="20" layoutY="100"/>
+            <DatePicker fx:id="appointmentDatePicker" layoutX="150" layoutY="100" styleClass="date-picker"/>
+
+            <!-- Patient Selection ComboBox -->
+            <Label text="Choose Patient" layoutX="20" layoutY="150"/>
+            <ComboBox fx:id="patientComboBox" layoutX="150" layoutY="150" styleClass="combo-box"/>
+
+            <Button fx:id="bookAppointmentBtn" layoutX="150" layoutY="200" text="Book Appointment" onAction="#bookAppointment" styleClass="button"/>
+        </AnchorPane>
+    </Tab>
+
+    <!-- Analytics Tab -->
+    <Tab text="Analytics">
+        <AnchorPane>
+            <Label text="Doctor Analytics" layoutX="20" layoutY="20" styleClass="heading"/>
+
+            <!-- Bar Chart for displaying doctor's analytics -->
+            <BarChart fx:id="doctorAnalyticsChart" layoutX="20" layoutY="60" prefWidth="600" prefHeight="400">
+                <xAxis>
+                    <CategoryAxis label="Doctor" />
+                </xAxis>
+                <yAxis>
+                    <NumberAxis label="Number of Appointments" />
+                </yAxis>
+            </BarChart>
+        </AnchorPane>
+    </Tab>
+</TabPane>

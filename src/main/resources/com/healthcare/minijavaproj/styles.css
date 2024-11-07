@@ -1,0 +1,23 @@
+
+
+.text-field, .combo-box, .button {
+    -fx-padding: 10;
+    -fx-font-size: 14px;
+    -fx-border-radius: 5px;
+    -fx-background-radius: 5px;
+}
+
+.button {
+    -fx-background-color: #ff7e5f;
+    -fx-text-fill: white;
+}
+
+.combo-box, .date-picker {
+    -fx-pref-width: 200px;
+}
+
+.heading {
+    -fx-font-weight: bold;
+    -fx-font-size: 16px;
+    -fx-padding: 10px;
+}
